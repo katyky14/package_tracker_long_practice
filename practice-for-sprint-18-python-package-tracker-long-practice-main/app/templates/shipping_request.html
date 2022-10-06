@@ -9,6 +9,7 @@
 <body>
   <h1>Shipping Form</h1>
   <form method="post" action="{{ url_for('.new_package') }}">
+    {{ form.csrf_token }}
     <div> {{ form.sender_name.label }}{{ form.sender_name }} </div>
     <div> {{ form.recipient_name.label }}{{ form.recipient_name }} </div>
     <div>
@@ -19,9 +20,7 @@
       {{ form.destination.label }}
       {{ form.destination }}
     </div>
-    <!-- {% for choice in choices %}
-      <p>{{ choice.map }}</p>
-    {% endfor %} -->
+    <div> {{ form.submit }} </div>
 
   </form>
 </body>
